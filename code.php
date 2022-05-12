@@ -2,135 +2,175 @@
 session_start(); 
 include("DbConnection.php");
 
+
+if(isset($_POST["creerElection"]))
+{
+    $nomElection = $_POST["nomElection"]; 
+    $tempElection = $_POST["tempElection"]; 
+     
+
+    $postElection = [
+        "nomElection" => $nomElection, 
+        "tempElection" => $tempElection, 
+    ];
+  $refElection = "election"; 
+  $postElec = $database->getReference($refElection)->push($postElection); 
+
+  if($postElec)
+ {
+     header("location: configurationElection.php"); 
+ }
+}
+else {
+
+}
+
+
+if(isset($_POST["creer"]))
+{
+    $liste = $_POST["liste"]; 
+
+    $postListe = [
+        "liste" => $liste, 
+    ];
+  $refListe = "liste"; 
+  $postList = $database->getReference($refListe)->push($postListe); 
+  
+  if($postList)
+ {
+     header("location: creationListes.php"); 
+ }
+}
+else {
+
+}
+if(isset($_POST["creerElection"]))
+{
+    $nomElection = $_POST["nomElection"]; 
+    $tempElection = $_POST["tempElection"]; 
+     
+
+    $postElection = [
+        "nomElection" => $nomElection, 
+        "tempElection" => $tempElection, 
+    ];
+  $refElection = "election"; 
+  $postElec = $database->getReference($refElection)->push($postElection); 
+}
+else {
+
+}
+
 if(isset($_POST["enregistrer"]))
 {
     $nom = $_POST["nom"];
     $prenom = $_POST["prenom"];
     $email = $_POST["email"]; 
-    $filiere = $_POST["filiere"];
     $matricule = $_POST["matricule"];
-    $phone = $_POST["phone"];
-    $niveau = $_POST["niveau"];
-    $departement = $_POST["departement"];
+    $role = $_POST["role"];
     
     $postData = [
      "nom" => $nom, 
      "prenom" => $prenom,
      "email" => $email, 
-     "filiere" => $filiere, 
      "matricule" => $matricule,
-     "phone" => $phone,
-     "niveau" => $niveau,
-     "departement" => $departement,
+     "role" => $role,
 
  ];
- $refTable = "candidats"; 
+ $refTable = "utilisateurs"; 
  $postRef = $database->getReference($refTable)->push($postData);
 
- if($postRef) 
- {
-     $_SESSION["status"] = "votre enregistrement a été un succes!!!";
-     header("location: admit-form.php"); 
- }
- else 
- {
-     $_SESSION["status"] = "Donnée nom enregistreés!!!!";
- }
-}
-
-
-if(isset($_POST["enregistrement"]))
-{
-    $nom2 = $_POST["nom2"];
-    $prenom2 = $_POST["prenom2"];
-    $email2 = $_POST["email2"]; 
-    $filiere2 = $_POST["filiere2"];
-    $matricule2 = $_POST["matricule2"];
-    $phone2 = $_POST["phone2"];
-    $niveau2 = $_POST["niveau2"];
-    $departement2 = $_POST["departement2"];
-    
-    $postData2 = [
-     "nom2" => $nom2, 
-     "prenom2" => $prenom2,
-     "email2" => $email2, 
-     "filiere2" => $filiere2, 
-     "matricule2" => $matricule2,
-     "phone2" => $phone2,
-     "niveau2" => $niveau2,
-     "departement2" => $departement2,
-
- ];
- $tableElecteur = "eleteurs"; 
- $postElecteur = $database->getReference($tableElecteur)->push($postData2);
-
- if($postElecteur) 
+ if($postRef)
  {
      $_SESSION["status"] = "votre enregistrement a été un succes!!!";
      header("location: add-teacher.php"); 
  }
- else 
- {
-     $_SESSION["status"] = "Donnée nom enregistreés!!!!";
- }
+
 }
-
-
 
 if(isset($_POST["delete"]))
 {
     $id = $_POST["id_key"];
-    $refTable = "candidats/".$id;
+    $refTable = "utilisateurs/".$id;
     $deleteData = $database->getReference($refTable)->remove();
 }
 if($deleteData)
 {
     $_SESSION["status"] = "Suppression reussi!!!";
-    header("Location: all-student.php"); 
+    header("Location: voirListes.php"); 
 }
+
 else 
 {
-    $_SESSION["status"] = "l'élement n'a pas été supprimer!";
-    header("location: all-student.php"); 
+
+}
+if(isset($_POST["deleteListe"]))
+{
+    $id = $_POST["id_key2"];
+    $voteListe = "liste/".$id;
+    $deleteListe = $database->getReference($voteListe)->remove();
+}
+if($deleteListe)
+{
+
+    header("Location: voirListes.php"); 
+}
+
+else 
+{
+
 }
 
 
-if(isset($_POST["update"]))
+
+if(isset($_POST["modifier"]))
 {
     $id = $_POST["id"];
-    $nom = $_POST["nom"];
-    $prenom = $_POST["prenom"];
-    $email = $_POST["email"]; 
-    $filiere = $_POST["filiere"];
-    $matricule = $_POST["matricule"];
-    $phone = $_POST["phone"];
-    $niveau = $_POST["niveau"];
-    $departement = $_POST["departement"];
+    $nomE = $_POST["nom"];
+    $prenomE = $_POST["prenom"];
+    $matriculeE = $_POST["matricule"];
+    $mailE = $_POST["email"];
+    $roleE = $_POST["role"];
 
     $updateData = [
-     "nom" => $nom, 
-     "prenom" => $prenom,
-     "email" => $email, 
-     "filiere" => $filiere, 
-     "matricule" => $matricule,
-     "phone" => $phone,
-     "niveau" => $niveau,
-     "departement" => $departement,
-
+        "nom" => $nomE, 
+        "prenom" => $prenomE, 
+        "matricule" => $matriculeE, 
+        "email" => $mailE,
+        "role" => $roleE, 
     ];
-    $refTable = "candidats/".$id;
-   $updateQuery =  $database->getReference($refTable)->update($updateData);
+ 
+   $modifTable = "utilisateurs/".$id;
+   $updateQuery =  $database->getReference($modifTable)->update($updateData);
 }
 
 if($updateQuery)
 {
-    $_SESSION["status"] = "élément modifié!";
+    header("location: all-teacher.php"); 
 }
 else 
 {
-    $_SESSION["status"] = "Modification échoué";
+    header("location: all-teacher.php"); 
+}
+if(isset($_POST["modifListe"]))
+{
+    $id = $_POST["id"];
+    $listeE = $_POST["liste"];
+
+    $updateListe = [
+        "liste" => $listeE, 
+    ];
+ 
+   $modifTable = "liste/".$id;
+   $updateList =  $database->getReference($modifTable)->update($updateListe);
 }
 
-
-
+if($updateList)
+{
+    header("location: voirListes.php"); 
+}
+else 
+{
+   
+}
 ?>

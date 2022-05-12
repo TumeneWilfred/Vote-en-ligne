@@ -6,9 +6,7 @@ session_start();
 <!doctype html>
 <html class="no-js" lang="">
 
-
-<!-- Mirrored from www.radiustheme.com/demo/html/psdboss/akkhor/akkhor/all-student.html by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 17 Jul 2019 12:20:37 GMT -->
-<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=UTF-8" /><!-- /Added by HTTrack -->
+<meta http-equiv="content-type" content="text/html;charset=UTF-8" /><!-- /Added by HTTrack -->
 <head>
     <meta charset="utf-8">
     <meta http-equiv="x-ua-compatible" content="ie=edge">
@@ -107,36 +105,15 @@ session_start();
                <div class="sidebar-menu-content">
                 <ul class="nav nav-sidebar-menu sidebar-toggle-view">
                     
-                    <li class="nav-item sidebar-nav-item">
-                        <a href="#" class="nav-link"><i class="flaticon-classmates"></i><span>Candidats</span></a>
-                        <ul class="nav sub-group-menu">
-                            <li class="nav-item">
-                                <a href="all-student.php" class="nav-link"><i class="fas fa-angle-right"></i>Liste de candidats
-                                        </a>
-                            </li>
-                            <li class="nav-item">
-                                <a href="student-details.html" class="nav-link"><i
-                                        class="fas fa-angle-right"></i>Profil des candidats</a>
-                            </li>
-                            <li class="nav-item">
-                                <a href="admit-form.php" class="nav-link"><i
-                                        class="fas fa-angle-right"></i>Formulaire d'inscription</a>
-                            </li>
-                
-                        </ul>
-                    </li>
-                    <li class="nav-item sidebar-nav-item">
+                <li class="nav-item sidebar-nav-item">
                         <a href="#" class="nav-link"><i
-                                class="flaticon-multiple-users-silhouette"></i><span>Electeurs</span></a>
+                                class="flaticon-multiple-users-silhouette"></i><span>Utilisateurs</span></a>
                         <ul class="nav sub-group-menu">
                             <li class="nav-item">
-                                <a href="all-teacher.php" class="nav-link"><i class="fas fa-angle-right"></i>Liste des électeurs
+                                <a href="all-teacher.php" class="nav-link"><i class="fas fa-angle-right"></i>Liste des utilsateurs
                                     </a>
                             </li>
-                            <li class="nav-item">
-                                <a href="teacher-details.html" class="nav-link"><i
-                                         class="fas fa-angle-right"></i>Profil des électeurs</a>
-                            </li>
+                           
                             <li class="nav-item">
                                 <a href="add-teacher.php" class="nav-link"><i class="fas fa-angle-right"></i>Formulaire d'inscription
                                     </a>
@@ -145,10 +122,24 @@ session_start();
                         </ul>
                     </li>
                     <li class="nav-item sidebar-nav-item">
+                        <a href="#" class="nav-link"><i class="flaticon-couple"></i><span>Listes</span></a>
+                        <ul class="nav sub-group-menu">
+                             <li class="nav-item">
+                                <a href="creationListes.php" class="nav-link"><i class="fas fa-angle-right"></i>Creation des listes
+                                    </a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="voirListes.php" class="nav-link"><i class="fas fa-angle-right"></i>Voir les listes
+                                    </a>
+                            </li>
+                            
+                        </ul>
+                    </li>
+                    <li class="nav-item sidebar-nav-item">
                         <a href="#" class="nav-link"><i class="flaticon-couple"></i><span>Configuration de l'élection</span></a>
                         <ul class="nav sub-group-menu">
                             <li class="nav-item">
-                                <a href="all-parents.html" class="nav-link"><i class="fas fa-angle-right"></i>Configuration
+                                <a href="configurationElection.php" class="nav-link"><i class="fas fa-angle-right"></i>Configuration
                                     </a>
                             </li>
                             
@@ -165,6 +156,756 @@ session_start();
                         </ul>
                     </li>
                     
+                    <li >
+                        <a href="#" class="nav-link"><i ></i><span></span></a>
+                        <ul >
+                            <li >
+                                <a  class="nav-link"><i ></i>
+                                    </a>
+                            </li>
+                           
+                        </ul>
+                    </li>
+                    <li >
+                        <a href="#" class="nav-link"><i ></i><span></span></a>
+                        <ul >
+                            <li >
+                                <a  class="nav-link"><i ></i>
+                                    </a>
+                            </li>
+                           
+                        </ul>
+                    </li>
+                    <li >
+                        <a href="#" class="nav-link"><i ></i><span></span></a>
+                        <ul >
+                            <li >
+                                <a  class="nav-link"><i ></i>
+                                    </a>
+                            </li>
+                           
+                        </ul>
+                    </li>
+                    <li >
+                        <a href="#" class="nav-link"><i ></i><span></span></a>
+                        <ul >
+                            <li >
+                                <a  class="nav-link"><i ></i>
+                                    </a>
+                            </li>
+                           
+                        </ul>
+                    </li>
+                    <li >
+                        <a href="#" class="nav-link"><i ></i><span></span></a>
+                        <ul >
+                            <li >
+                                <a  class="nav-link"><i ></i>
+                                    </a>
+                            </li>
+                           
+                        </ul>
+                    </li>
+                    <li >
+                        <a href="#" class="nav-link"><i ></i><span></span></a>
+                        <ul >
+                            <li >
+                                <a  class="nav-link"><i ></i>
+                                    </a>
+                            </li>
+                           
+                        </ul>
+                    </li>
+                    <li >
+                        <a href="#" class="nav-link"><i ></i><span></span></a>
+                        <ul >
+                            <li >
+                                <a  class="nav-link"><i ></i>
+                                    </a>
+                            </li>
+                           
+                        </ul>
+                    </li>
+                    <li >
+                        <a href="#" class="nav-link"><i ></i><span></span></a>
+                        <ul >
+                            <li >
+                                <a  class="nav-link"><i ></i>
+                                    </a>
+                            </li>
+                           
+                        </ul>
+                    </li>
+                    <li >
+                        <a href="#" class="nav-link"><i ></i><span></span></a>
+                        <ul >
+                            <li >
+                                <a  class="nav-link"><i ></i>
+                                    </a>
+                            </li>
+                           
+                        </ul>
+                    </li>
+                    <li >
+                        <a href="#" class="nav-link"><i ></i><span></span></a>
+                        <ul >
+                            <li >
+                                <a  class="nav-link"><i ></i>
+                                    </a>
+                            </li>
+                           
+                        </ul>
+                    </li>
+                    <li >
+                        <a href="#" class="nav-link"><i ></i><span></span></a>
+                        <ul >
+                            <li >
+                                <a  class="nav-link"><i ></i>
+                                    </a>
+                            </li>
+                           
+                        </ul>
+                    </li>
+                    <li >
+                        <a href="#" class="nav-link"><i ></i><span></span></a>
+                        <ul >
+                            <li >
+                                <a  class="nav-link"><i ></i>
+                                    </a>
+                            </li>
+                           
+                        </ul>
+                    </li>
+                    <li >
+                        <a href="#" class="nav-link"><i ></i><span></span></a>
+                        <ul >
+                            <li >
+                                <a  class="nav-link"><i ></i>
+                                    </a>
+                            </li>
+                           
+                        </ul>
+                    </li>
+                    <li >
+                        <a href="#" class="nav-link"><i ></i><span></span></a>
+                        <ul >
+                            <li >
+                                <a  class="nav-link"><i ></i>
+                                    </a>
+                            </li>
+                           
+                        </ul>
+                    </li>
+                    <li >
+                        <a href="#" class="nav-link"><i ></i><span></span></a>
+                        <ul >
+                            <li >
+                                <a  class="nav-link"><i ></i>
+                                    </a>
+                            </li>
+                           
+                        </ul>
+                    </li>
+                    <li >
+                        <a href="#" class="nav-link"><i ></i><span></span></a>
+                        <ul >
+                            <li >
+                                <a  class="nav-link"><i ></i>
+                                    </a>
+                            </li>
+                           
+                        </ul>
+                    </li>
+                    <li >
+                        <a href="#" class="nav-link"><i ></i><span></span></a>
+                        <ul >
+                            <li >
+                                <a  class="nav-link"><i ></i>
+                                    </a>
+                            </li>
+                           
+                        </ul>
+                    </li>
+                    <li >
+                        <a href="#" class="nav-link"><i ></i><span></span></a>
+                        <ul >
+                            <li >
+                                <a  class="nav-link"><i ></i>
+                                    </a>
+                            </li>
+                           
+                        </ul>
+                    </li>
+                    <li >
+                        <a href="#" class="nav-link"><i ></i><span></span></a>
+                        <ul >
+                            <li >
+                                <a  class="nav-link"><i ></i>
+                                    </a>
+                            </li>
+                           
+                        </ul>
+                    </li>
+                    <li >
+                        <a href="#" class="nav-link"><i ></i><span></span></a>
+                        <ul >
+                            <li >
+                                <a  class="nav-link"><i ></i>
+                                    </a>
+                            </li>
+                           
+                        </ul>
+                    </li>
+                    <li >
+                        <a href="#" class="nav-link"><i ></i><span></span></a>
+                        <ul >
+                            <li >
+                                <a  class="nav-link"><i ></i>
+                                    </a>
+                            </li>
+                           
+                        </ul>
+                    </li>
+                    <li >
+                        <a href="#" class="nav-link"><i ></i><span></span></a>
+                        <ul >
+                            <li >
+                                <a  class="nav-link"><i ></i>
+                                    </a>
+                            </li>
+                           
+                        </ul>
+                    </li>
+                    <li >
+                        <a href="#" class="nav-link"><i ></i><span></span></a>
+                        <ul >
+                            <li >
+                                <a  class="nav-link"><i ></i>
+                                    </a>
+                            </li>
+                           
+                        </ul>
+                    </li>
+                    <li >
+                        <a href="#" class="nav-link"><i ></i><span></span></a>
+                        <ul >
+                            <li >
+                                <a  class="nav-link"><i ></i>
+                                    </a>
+                            </li>
+                           
+                        </ul>
+                    </li>
+                    <li >
+                        <a href="#" class="nav-link"><i ></i><span></span></a>
+                        <ul >
+                            <li >
+                                <a  class="nav-link"><i ></i>
+                                    </a>
+                            </li>
+                           
+                        </ul>
+                    </li>
+                    <li >
+                        <a href="#" class="nav-link"><i ></i><span></span></a>
+                        <ul >
+                            <li >
+                                <a  class="nav-link"><i ></i>
+                                    </a>
+                            </li>
+                           
+                        </ul>
+                    </li>
+                    <li >
+                        <a href="#" class="nav-link"><i ></i><span></span></a>
+                        <ul >
+                            <li >
+                                <a  class="nav-link"><i ></i>
+                                    </a>
+                            </li>
+                           
+                        </ul>
+                    </li>
+                    <li >
+                        <a href="#" class="nav-link"><i ></i><span></span></a>
+                        <ul >
+                            <li >
+                                <a  class="nav-link"><i ></i>
+                                    </a>
+                            </li>
+                           
+                        </ul>
+                    </li>
+                    <li >
+                        <a href="#" class="nav-link"><i ></i><span></span></a>
+                        <ul >
+                            <li >
+                                <a  class="nav-link"><i ></i>
+                                    </a>
+                            </li>
+                           
+                        </ul>
+                    </li>
+                    <li >
+                        <a href="#" class="nav-link"><i ></i><span></span></a>
+                        <ul >
+                            <li >
+                                <a  class="nav-link"><i ></i>
+                                    </a>
+                            </li>
+                           
+                        </ul>
+                    </li>
+                    <li >
+                        <a href="#" class="nav-link"><i ></i><span></span></a>
+                        <ul >
+                            <li >
+                                <a  class="nav-link"><i ></i>
+                                    </a>
+                            </li>
+                           
+                        </ul>
+                    </li>
+                    <li >
+                        <a href="#" class="nav-link"><i ></i><span></span></a>
+                        <ul >
+                            <li >
+                                <a  class="nav-link"><i ></i>
+                                    </a>
+                            </li>
+                           
+                        </ul>
+                    </li>
+                    <li >
+                        <a href="#" class="nav-link"><i ></i><span></span></a>
+                        <ul >
+                            <li >
+                                <a  class="nav-link"><i ></i>
+                                    </a>
+                            </li>
+                           
+                        </ul>
+                    </li>
+                    <li >
+                        <a href="#" class="nav-link"><i ></i><span></span></a>
+                        <ul >
+                            <li >
+                                <a  class="nav-link"><i ></i>
+                                    </a>
+                            </li>
+                           
+                        </ul>
+                    </li>
+                    <li >
+                        <a href="#" class="nav-link"><i ></i><span></span></a>
+                        <ul >
+                            <li >
+                                <a  class="nav-link"><i ></i>
+                                    </a>
+                            </li>
+                           
+                        </ul>
+                    </li>
+                    <li >
+                        <a href="#" class="nav-link"><i ></i><span></span></a>
+                        <ul >
+                            <li >
+                                <a  class="nav-link"><i ></i>
+                                    </a>
+                            </li>
+                           
+                        </ul>
+                    </li>
+                    <li >
+                        <a href="#" class="nav-link"><i ></i><span></span></a>
+                        <ul >
+                            <li >
+                                <a  class="nav-link"><i ></i>
+                                    </a>
+                            </li>
+                           
+                        </ul>
+                    </li>
+                    <li >
+                        <a href="#" class="nav-link"><i ></i><span></span></a>
+                        <ul >
+                            <li >
+                                <a  class="nav-link"><i ></i>
+                                    </a>
+                            </li>
+                           
+                        </ul>
+                    </li>
+                    <li >
+                        <a href="#" class="nav-link"><i ></i><span></span></a>
+                        <ul >
+                            <li >
+                                <a  class="nav-link"><i ></i>
+                                    </a>
+                            </li>
+                           
+                        </ul>
+                    </li>
+                    <li >
+                        <a href="#" class="nav-link"><i ></i><span></span></a>
+                        <ul >
+                            <li >
+                                <a  class="nav-link"><i ></i>
+                                    </a>
+                            </li>
+                           
+                        </ul>
+                    </li>
+                    <li >
+                        <a href="#" class="nav-link"><i ></i><span></span></a>
+                        <ul >
+                            <li >
+                                <a  class="nav-link"><i ></i>
+                                    </a>
+                            </li>
+                           
+                        </ul>
+                    </li>
+                    <li >
+                        <a href="#" class="nav-link"><i ></i><span></span></a>
+                        <ul >
+                            <li >
+                                <a  class="nav-link"><i ></i>
+                                    </a>
+                            </li>
+                           
+                        </ul>
+                    </li>
+                    <li >
+                        <a href="#" class="nav-link"><i ></i><span></span></a>
+                        <ul >
+                            <li >
+                                <a  class="nav-link"><i ></i>
+                                    </a>
+                            </li>
+                           
+                        </ul>
+                    </li>
+                    <li >
+                        <a href="#" class="nav-link"><i ></i><span></span></a>
+                        <ul >
+                            <li >
+                                <a  class="nav-link"><i ></i>
+                                    </a>
+                            </li>
+                           
+                        </ul>
+                    </li>
+                    <li >
+                        <a href="#" class="nav-link"><i ></i><span></span></a>
+                        <ul >
+                            <li >
+                                <a  class="nav-link"><i ></i>
+                                    </a>
+                            </li>
+                           
+                        </ul>
+                    </li>
+                    <li >
+                        <a href="#" class="nav-link"><i ></i><span></span></a>
+                        <ul >
+                            <li >
+                                <a  class="nav-link"><i ></i>
+                                    </a>
+                            </li>
+                           
+                        </ul>
+                    </li>
+                    <li >
+                        <a href="#" class="nav-link"><i ></i><span></span></a>
+                        <ul >
+                            <li >
+                                <a  class="nav-link"><i ></i>
+                                    </a>
+                            </li>
+                           
+                        </ul>
+                    </li>
+                    <li >
+                        <a href="#" class="nav-link"><i ></i><span></span></a>
+                        <ul >
+                            <li >
+                                <a  class="nav-link"><i ></i>
+                                    </a>
+                            </li>
+                           
+                        </ul>
+                    </li>
+                    <li >
+                        <a href="#" class="nav-link"><i ></i><span></span></a>
+                        <ul >
+                            <li >
+                                <a  class="nav-link"><i ></i>
+                                    </a>
+                            </li>
+                           
+                        </ul>
+                    </li>
+                    <li >
+                        <a href="#" class="nav-link"><i ></i><span></span></a>
+                        <ul >
+                            <li >
+                                <a  class="nav-link"><i ></i>
+                                    </a>
+                            </li>
+                           
+                        </ul>
+                    </li>
+                    <li >
+                        <a href="#" class="nav-link"><i ></i><span></span></a>
+                        <ul >
+                            <li >
+                                <a  class="nav-link"><i ></i>
+                                    </a>
+                            </li>
+                           
+                        </ul>
+                    </li>
+                    <li >
+                        <a href="#" class="nav-link"><i ></i><span></span></a>
+                        <ul >
+                            <li >
+                                <a  class="nav-link"><i ></i>
+                                    </a>
+                            </li>
+                           
+                        </ul>
+                    </li>
+                    <li >
+                        <a href="#" class="nav-link"><i ></i><span></span></a>
+                        <ul >
+                            <li >
+                                <a  class="nav-link"><i ></i>
+                                    </a>
+                            </li>
+                           
+                        </ul>
+                    </li>
+                    <li >
+                        <a href="#" class="nav-link"><i ></i><span></span></a>
+                        <ul >
+                            <li >
+                                <a  class="nav-link"><i ></i>
+                                    </a>
+                            </li>
+                           
+                        </ul>
+                    </li>
+                    <li >
+                        <a href="#" class="nav-link"><i ></i><span></span></a>
+                        <ul >
+                            <li >
+                                <a  class="nav-link"><i ></i>
+                                    </a>
+                            </li>
+                           
+                        </ul>
+                    </li>
+                    <li >
+                        <a href="#" class="nav-link"><i ></i><span></span></a>
+                        <ul >
+                            <li >
+                                <a  class="nav-link"><i ></i>
+                                    </a>
+                            </li>
+                           
+                        </ul>
+                    </li>
+                    <li >
+                        <a href="#" class="nav-link"><i ></i><span></span></a>
+                        <ul >
+                            <li >
+                                <a  class="nav-link"><i ></i>
+                                    </a>
+                            </li>
+                           
+                        </ul>
+                    </li>
+                    <li >
+                        <a href="#" class="nav-link"><i ></i><span></span></a>
+                        <ul >
+                            <li >
+                                <a  class="nav-link"><i ></i>
+                                    </a>
+                            </li>
+                           
+                        </ul>
+                    </li>
+                    <li >
+                        <a href="#" class="nav-link"><i ></i><span></span></a>
+                        <ul >
+                            <li >
+                                <a  class="nav-link"><i ></i>
+                                    </a>
+                            </li>
+                           
+                        </ul>
+                    </li>
+                    <li >
+                        <a href="#" class="nav-link"><i ></i><span></span></a>
+                        <ul >
+                            <li >
+                                <a  class="nav-link"><i ></i>
+                                    </a>
+                            </li>
+                           
+                        </ul>
+                    </li>
+                    <li >
+                        <a href="#" class="nav-link"><i ></i><span></span></a>
+                        <ul >
+                            <li >
+                                <a  class="nav-link"><i ></i>
+                                    </a>
+                            </li>
+                           
+                        </ul>
+                    </li>
+                    <li >
+                        <a href="#" class="nav-link"><i ></i><span></span></a>
+                        <ul >
+                            <li >
+                                <a  class="nav-link"><i ></i>
+                                    </a>
+                            </li>
+                           
+                        </ul>
+                    </li>
+                    <li >
+                        <a href="#" class="nav-link"><i ></i><span></span></a>
+                        <ul >
+                            <li >
+                                <a  class="nav-link"><i ></i>
+                                    </a>
+                            </li>
+                           
+                        </ul>
+                    </li>
+                    <li >
+                        <a href="#" class="nav-link"><i ></i><span></span></a>
+                        <ul >
+                            <li >
+                                <a  class="nav-link"><i ></i>
+                                    </a>
+                            </li>
+                           
+                        </ul>
+                    </li>
+                    <li >
+                        <a href="#" class="nav-link"><i ></i><span></span></a>
+                        <ul >
+                            <li >
+                                <a  class="nav-link"><i ></i>
+                                    </a>
+                            </li>
+                           
+                        </ul>
+                    </li>
+                    <li >
+                        <a href="#" class="nav-link"><i ></i><span></span></a>
+                        <ul >
+                            <li >
+                                <a  class="nav-link"><i ></i>
+                                    </a>
+                            </li>
+                           
+                        </ul>
+                    </li>
+                    <li >
+                        <a href="#" class="nav-link"><i ></i><span></span></a>
+                        <ul >
+                            <li >
+                                <a  class="nav-link"><i ></i>
+                                    </a>
+                            </li>
+                           
+                        </ul>
+                    </li>
+                    <li >
+                        <a href="#" class="nav-link"><i ></i><span></span></a>
+                        <ul >
+                            <li >
+                                <a  class="nav-link"><i ></i>
+                                    </a>
+                            </li>
+                           
+                        </ul>
+                    </li>
+                    <li >
+                        <a href="#" class="nav-link"><i ></i><span></span></a>
+                        <ul >
+                            <li >
+                                <a  class="nav-link"><i ></i>
+                                    </a>
+                            </li>
+                           
+                        </ul>
+                    </li>
+                    <li >
+                        <a href="#" class="nav-link"><i ></i><span></span></a>
+                        <ul >
+                            <li >
+                                <a  class="nav-link"><i ></i>
+                                    </a>
+                            </li>
+                           
+                        </ul>
+                    </li>
+                    <li >
+                        <a href="#" class="nav-link"><i ></i><span></span></a>
+                        <ul >
+                            <li >
+                                <a  class="nav-link"><i ></i>
+                                    </a>
+                            </li>
+                           
+                        </ul>
+                    </li>
+                    <li >
+                        <a href="#" class="nav-link"><i ></i><span></span></a>
+                        <ul >
+                            <li >
+                                <a  class="nav-link"><i ></i>
+                                    </a>
+                            </li>
+                           
+                        </ul>
+                    </li>
+                    <li >
+                        <a href="#" class="nav-link"><i ></i><span></span></a>
+                        <ul >
+                            <li >
+                                <a  class="nav-link"><i ></i>
+                                    </a>
+                            </li>
+                           
+                        </ul>
+                    </li>
+                    <li >
+                        <a href="#" class="nav-link"><i ></i><span></span></a>
+                        <ul >
+                            <li >
+                                <a  class="nav-link"><i ></i>
+                                    </a>
+                            </li>
+                           
+                        </ul>
+                    </li>
+                    <li >
+                        <a href="#" class="nav-link"><i ></i><span></span></a>
+                        <ul >
+                            <li >
+                                <a  class="nav-link"><i ></i>
+                                    </a>
+                            </li>
+                           
+                        </ul>
+                    </li>
                 </ul>
             </div>
             </div>
@@ -175,20 +916,9 @@ session_start();
                     <div class="card-body">
                         <div class="heading-layout1">
                             <div class="item-title">
-                                <h3>Tout les electeurs</h3>
+                                <h3>Listes des Utilisateurs</h3>
                             </div>
-                            <div class="dropdown">
-                                <a class="dropdown-toggle" href="#" role="button" data-toggle="dropdown"
-                                    aria-expanded="false">...</a>
-
-                                <div class="dropdown-menu dropdown-menu-right">
-                                    <a class="dropdown-item" href="#"><i
-                                            class="fas fa-times text-orange-red"></i>Delete</a>
-                                    <a class="dropdown-item" href="#"><i
-                                            class="fas fa-cogs text-dark-pastel-green"></i>Update</a>
-                                    
-                                </div>
-                            </div>
+                          
                         </div>
                         
                         <div class="table-responsive">
@@ -198,20 +928,17 @@ session_start();
                                         <th>
                                             <div class="form-check">
                                                 <input type="checkbox" class="form-check-input checkAll">
-                                                <label class="form-check-label">Id</label>
+                                                <label class="form-check-label">N°</label>
                                             </div>
                                         </th>
                                        
                                         <th>Nom</th>
                                         <th>Prenom</th>
                                         <th>Matricule</th>
-                                        <th>Département</th>
-                                        <th>Filiere</th>
-                                        <th>Email</th>
-                                        <th>Phone</th>
-                                        <th>Niveau</th>
-                                        
+                                        <th>Email</th>  
+                                        <th>Role</th>
                                         <th>Action</th>
+                                        <th>Profil</th>
                                       
                                         <th></th>
                                     </tr>
@@ -219,8 +946,8 @@ session_start();
                                 <tbody>
                                         <?php
                                             include("DbConnection.php"); 
-                                            $tableEtudiant = "eleteurs"; 
-                                            $fetchData = $database->getReference($tableEtudiant)->getValue();
+                                            $table = "utilisateurs"; 
+                                            $fetchData = $database->getReference($table)->getValue();
                                             if($fetchData > 0) 
                                             {
                                                 $i=0; 
@@ -231,34 +958,35 @@ session_start();
                                     <tr>
                                         <td>
                                             <div class="form-check">
-                                                <input type="checkbox" class="form-check-input">
+                                                <input type="checkbox">
                                                 <label class="form-check-label"><?= $i;  ?></label>
                                             </div>
                                         </td>
                                       
-                                        <td><?= $row["nom2"];  ?></td>
-                                        <td><?= $row["prenom2"];  ?></td>
-                                        <td><?= $row["matricule2"];  ?></td>
-                                        <td><?= $row["departement2"];  ?></td>
-                                        <td><?= $row["filiere2"];  ?> </td>
-                                        <td><?= $row["email2"];  ?></td>
-                                        <td><?= $row["phone2"];  ?></td>
-                                        <td><?= $row["niveau2"];  ?></td>
-                                  
+                                        <td><?= $row["nom"];  ?></td>
+                                        <td><?= $row["prenom"];  ?></td>
+                                        <td><?= $row["matricule"];  ?></td>
+                                        <td><?= $row["role"] ?></td>
+                                        <td><?= $row["email"];  ?></td>
+                                       
                                         <td>
                                             <div class="dropdown">
                                                 <a href="#" class="dropdown-toggle" data-toggle="dropdown"
                                                     aria-expanded="false">
-                                                    <span class="flaticon-more-button-of-three-dots"></span>
+                                                    <span class="flaticon-more-;,button-of-three-dots"></span>
                                                 </a>
                                                 <div class="dropdown-menu dropdown-menu-right">
-                                                    <a class="dropdown-item" href="#"><i
-                                                            class="fas fa-times text-orange-red"></i>Delete</a>
-                                                    <a class="dropdown-item" href="#"><i
-                                                            class="fas fa-cogs text-dark-pastel-green"></i>Updata</a>
-                                                    
+                                                  <form action="code.php" method = "POST">
+                                                  <input type="hidden" name="id_key" value="<?=$key; ?>">
+                                                  <button type="submit" class="btn btn-primary btn-lg" name="delete">Delete</button>
+                                                  </form>  
+                                                 <a href="edit.php?id=<?= $key; ?>" class="btn btn-success"> Update</a>
+
                                                 </div>
                                             </div>
+                                        </td>
+                                        <td>
+                                          <a href="parents-details.php?id=<?= $key; ?>"> <button type="submit" class="btn btn-primary btn-lg">Voir Profil</button></a> 
                                         </td>
                                     </tr>
                                     <?php
