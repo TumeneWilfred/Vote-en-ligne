@@ -35,6 +35,7 @@ session_start();
     <!-- Custom CSS -->
     <link rel="stylesheet" href="style.css">
     <!-- Modernize js -->
+    <link rel="stylesheet" href="logo.css">
     <script src="js/modernizr-3.6.0.min.js"></script>
 </head>
 
@@ -48,7 +49,7 @@ session_start();
             <div class="nav-bar-header-one">
                 <div class="header-logo">
                     <a href="index.html">
-                       LOGO
+                    <img class="logo" src="img/logo.png" alt="logo">
                     </a>
                 </div>
                   <div class="toggle-button sidebar-toggle">
@@ -113,7 +114,7 @@ session_start();
                                 class="flaticon-multiple-users-silhouette"></i><span>Utilisateurs</span></a>
                         <ul class="nav sub-group-menu">
                             <li class="nav-item">
-                                <a href="all-teacher.php" class="nav-link"><i class="fas fa-angle-right"></i>Liste des utilsateurs
+                                <a href="index2.php" class="nav-link"><i class="fas fa-angle-right"></i>Liste des utilsateurs
                                     </a>
                             </li>
                            
@@ -926,7 +927,7 @@ session_start();
                     <div class="card-body">
                         <div class="heading-layout1">
                             <div class="item-title">
-                                <h3>Modification d'une liste d'une liste</h3>
+                                <h3>Modification d'une liste </h3>
                             </div>
                             <div class="dropdown">
                                 <a class="dropdown-toggle" href="#" role="button" data-toggle="dropdown"
@@ -950,9 +951,21 @@ session_start();
                             <input type="hidden" name="id" value="<?= $id; ?>">
                             <div class="row">
                                 <div class="col-xl-3 col-lg-6 col-12 form-group">
-                                    <label>Saisissez le nouveau nom de la liste liste </label>
+                                    <label> nouveau nom de la liste liste </label>
                                     <input type="text" name="liste" value="<?=$modifData["liste"];?>" class="form-control">
-                               <br>
+                                </div>
+                                <div class="col-xl-3 col-lg-6 col-12 form-group">
+                                    <label> Choix de la couleur de la liste</label>
+                                    <select class="select2" name="couleur">
+                                 
+                                        <option value="Rouge">Rouge</option>
+                                        <option value="Bleu">Bleu</option>
+                                        <option value="Noir">Noir</option>
+                                        <option value="Blanc">Blanc</option> 
+                                        <option value="Verte">verte</option>
+                                        <option value="Jaune">jaune</option>
+                                        
+                                    </select>
                                 </div>
 
                             </div>

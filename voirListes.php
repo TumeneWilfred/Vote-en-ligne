@@ -1,8 +1,14 @@
-<?php
-
+<?php 
 session_start(); 
-
+    if (@$_SESSION["status"] != "login Reuissi") 
+    {
+        header("location: index.php"); 
+        exit(); 
+        
+    }
+   
 ?>
+
 <!doctype html>
 <html class="no-js" lang="">
 
@@ -34,6 +40,7 @@ session_start();
     <!-- Custom CSS -->
     <link rel="stylesheet" href="style.css">
     <!-- Modernize js -->
+    <link rel="stylesheet" href="logo.css">
     <script src="js/modernizr-3.6.0.min.js"></script>
 </head>
 
@@ -47,7 +54,7 @@ session_start();
             <div class="nav-bar-header-one">
                 <div class="header-logo">
                     <a href="index.html">
-                      LOGO
+                    <img class="logo" src="img/logo.png" alt="logo">
                     </a>
                 </div>
                   <div class="toggle-button sidebar-toggle">
@@ -112,7 +119,7 @@ session_start();
                                 class="flaticon-multiple-users-silhouette"></i><span>Utilisateurs</span></a>
                         <ul class="nav sub-group-menu">
                             <li class="nav-item">
-                                <a href="all-teacher.php" class="nav-link"><i class="fas fa-angle-right"></i>Liste des utilsateurs
+                                <a href="index2.php" class="nav-link"><i class="fas fa-angle-right"></i>Liste des utilsateurs
                                     </a>
                             </li>
                            
@@ -916,13 +923,13 @@ session_start();
                 
                 <div class="card height-auto">
                     <div class="card-body">
+                    <a href="index.php">   <button class="btn btn-primary btn-lg">DECONNEXION</button></a>
                         <div class="heading-layout1">
                             <div class="item-title">
-                                <h3>Listes des Utilisateurs</h3>
+                                <h3>Historique des Listes</h3>
                             </div>
-                          
                         </div>
-                        
+                       
                         <div class="table-responsive">
                         <table class="table display data-table text-nowrap">
                                 <thead>
@@ -935,6 +942,7 @@ session_start();
                                         </th>
                                        
                                         <th>Nom Liste</th>
+                                        <th>Couleur</th>
                                         <th>Delete</th>
                                         <th>Update</th>   
                                       
@@ -962,6 +970,7 @@ session_start();
                                         </td>
                                       
                                         <td><?= $row["liste"];  ?></td>
+                                        <td><?= $row["couleur"];  ?></td>
                                       
                                        
                                         <td>
@@ -969,7 +978,7 @@ session_start();
                                                 
                        
                                                   <form action="code.php" method = "POST">
-                                                  <input type="hidden" name="id_key" value="<?=$key; ?>">
+                                                  <input type="hidden" name="id_key2" value="<?=$key; ?>">
                                                   <button type="submit" class="btn btn-danger btn-lg" name="deleteListe">Delete</button>
                                                   </form>                                                                  
                                                     

@@ -1,10 +1,14 @@
 <?php
 session_start();
 include("DbConnection.php"); 
+$email = $_POST["email"]; 
+$password = $_POST["password"]; 
+if(!empty($email) AND !empty($password))
+{
+
 if(isset($_POST["login"])); 
 {
-    $email = $_POST["email"]; 
-    $password = $_POST["password"]; 
+  
   
 
     try {
@@ -18,8 +22,8 @@ if(isset($_POST["login"]));
             $uid = $verifiedToken->claims()->get("sub");
             $_SESSION["verified_user_id"] = $uid; 
             $_SESSION["idTokenString"] = $idTokenString;
-            $_SESSION["status"] = "login Reuissi!!";
-            header("Location: index2.html"); 
+            $_SESSION["status"] = "login Reuissi";
+            header("Location: index2.php"); 
             exit();
         } catch(InvalideToken $e)
         {
@@ -31,9 +35,15 @@ if(isset($_POST["login"]));
     } catch (\Kreait\Firebase\Exception\Auth\UserNotFound $e) 
     {
         $_SESSION["status"] = "No email Found";
-              header("Location: index.php");
+        header("Location: index.php"); 
+        
         exit();
     }
+}
+}
+else 
+{
+    header("location: index.php"); 
 }
 
 ?>

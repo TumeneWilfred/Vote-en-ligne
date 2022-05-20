@@ -1,6 +1,12 @@
-<?php
-session_start();
-
+<?php 
+session_start(); 
+    if (@$_SESSION["status"] != "login Reuissi") 
+    {
+        header("location: index.php"); 
+        exit(); 
+        
+    }
+   
 ?>
 
 <!doctype html>
@@ -34,6 +40,7 @@ session_start();
     <link rel="stylesheet" href="css/datepicker.min.css">
     <!-- Custom CSS -->
     <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="logo.css">
     <!-- Modernize js -->
     <script src="js/modernizr-3.6.0.min.js"></script>
 </head>
@@ -48,7 +55,7 @@ session_start();
             <div class="nav-bar-header-one">
                 <div class="header-logo">
                     <a href="index.html">
-                       LOGO
+                    <img class="logo" src="img/logo.png" alt="logo">
                     </a>
                 </div>
                   <div class="toggle-button sidebar-toggle">
@@ -113,7 +120,7 @@ session_start();
                                 class="flaticon-multiple-users-silhouette"></i><span>Utilisateurs</span></a>
                         <ul class="nav sub-group-menu">
                             <li class="nav-item">
-                                <a href="all-teacher.php" class="nav-link"><i class="fas fa-angle-right"></i>Liste des utilsateurs
+                                <a href="index2.php" class="nav-link"><i class="fas fa-angle-right"></i>Liste des utilsateurs
                                     </a>
                             </li>
                            
@@ -925,12 +932,12 @@ session_start();
                 <div class="card height-auto">
                     <div class="card-body">
                         <div class="heading-layout1">
+                        
                             <div class="item-title">
                                 <h3>Ajouter un utilisateurs</h3>
                             </div>
                             <div class="dropdown">
-                                <a class="dropdown-toggle" href="#" role="button" data-toggle="dropdown"
-                                    aria-expanded="false">...</a>
+                            <a href="index.php">   <button class="btn btn-primary btn-lg">DECONNEXION</button></a>
                                 <div class="dropdown-menu dropdown-menu-right">
                                     <a class="dropdown-item" href="#"><i
                                             class="fas fa-times text-orange-red"></i>Delete</a>
@@ -980,14 +987,7 @@ session_start();
                 </div>
                    
 
-                <?php
-                
-                                if(isset($_SESSION["status"]))
-                                    {       
-                                       echo "<h4 >".$_SESSION["status"]."</h4>";
-                                      unset($_SESSION["status"]);
-                                    }
-                                ?>
+            
                 <!-- Admit Form Area End Here -->
                 <footer class="footer-wrap-layout1">
                     <div class="copyright"> <a href="#"></a>  <a

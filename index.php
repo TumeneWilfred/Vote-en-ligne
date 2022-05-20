@@ -1,13 +1,9 @@
-<?php
 
-session_start(); 
-
-?>
 
 <!DOCTYPE html>
 <html lang="en">
 <head>
-	<title>Login V3</title>
+	<title>Login </title>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 <!--===============================================================================================-->	
@@ -38,15 +34,8 @@ session_start();
 	<div class="limiter">
 		<div class="container-login100" style="background-image: url('images2/bg-01.jpg');">
 			<div class="wrap-login100">
-			<?php
-
-		if(isset($_SESSION["status"]))
-			{
- 		   echo "<h2 class='alert alert-success'>".$_SESSION["status"]."</h2>";
-   			 unset($_SESSION["status"]);
-			}
-			?>
-				<form class="login100-form validate-form" method="POST" action="loginCode.php">
+		
+				<form class="login100-form validate-form"  action="loginCode.php" method="POST">
 					<span class="login100-form-logo">
 						<i class="zmdi zmdi-landscape"></i>
 					</span>
@@ -57,7 +46,7 @@ session_start();
 
 				   
 					<div class="wrap-input100 " >
-						<input class="input100" type="email" name="email" placeholder="email">
+						<input class="input100" type="email" name="email" placeholder="email" >
 						<span class="focus-input100" data-placeholder="&#xf207;"></span>
 					</div>
 

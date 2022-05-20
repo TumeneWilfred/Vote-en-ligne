@@ -8,7 +8,6 @@ if(isset($_POST["creerElection"]))
     $nomElection = $_POST["nomElection"]; 
     $tempElection = $_POST["tempElection"]; 
      
-
     $postElection = [
         "nomElection" => $nomElection, 
         "tempElection" => $tempElection, 
@@ -29,16 +28,18 @@ else {
 if(isset($_POST["creer"]))
 {
     $liste = $_POST["liste"]; 
+    $couleur = $_POST["couleur"]; 
 
     $postListe = [
         "liste" => $liste, 
+        "couleur" => $couleur, 
     ];
   $refListe = "liste"; 
   $postList = $database->getReference($refListe)->push($postListe); 
   
   if($postList)
  {
-     header("location: creationListes.php"); 
+     header("location: voirListes.php"); 
  }
 }
 else {
@@ -63,6 +64,22 @@ else {
 
 if(isset($_POST["enregistrer"]))
 {
+
+$taille  = 10;
+$pass = array();
+$id = 0;  
+for($i=48; $i<58; $i++ ) $pass[$id++] = chr($i); 
+for($i=65; $i<91; $i++ ) $pass[$id++] = chr($i); 
+for($i=97; $i<123; $i++ ) $pass[$id++] = chr($i); 
+$password = "";
+
+for($i = 0 ; $i < $taille; $i++) 
+{
+    $password .= $pass[rand(0, $id - 1)];
+}
+
+
+    
     $nom = $_POST["nom"];
     $prenom = $_POST["prenom"];
     $email = $_POST["email"]; 
@@ -75,7 +92,7 @@ if(isset($_POST["enregistrer"]))
      "email" => $email, 
      "matricule" => $matricule,
      "role" => $role,
-
+     "password" => sha1($password)
  ];
  $refTable = "utilisateurs"; 
  $postRef = $database->getReference($refTable)->push($postData);
@@ -84,6 +101,22 @@ if(isset($_POST["enregistrer"]))
  {
      $_SESSION["status"] = "votre enregistrement a été un succes!!!";
      header("location: add-teacher.php"); 
+
+$header = "MINE-version: 1.0\r\n"; 
+$header .= "From: 'alcantadard.com' <supportAlcantadard.com>"."\n";  
+$header .= "Content-Type:text/html; charset = 'utf-8'"."\n"; 
+$header .= "Content-Transfer-Encoding: 8bit";
+
+$message = "<p>Bienvenue au election de l'AE Mme/Mr $nom </p>
+            <p>Matricule: $matricule</p>
+            <p>Password: $password.</p>
+           
+
+"
+;
+
+mail($email, "Objet", $message, $header); 
+
  }
 
 }
@@ -121,8 +154,6 @@ else
 
 }
 
-
-
 if(isset($_POST["modifier"]))
 {
     $id = $_POST["id"];
@@ -150,15 +181,17 @@ if($updateQuery)
 }
 else 
 {
-    header("location: all-teacher.php"); 
+    
 }
 if(isset($_POST["modifListe"]))
 {
     $id = $_POST["id"];
     $listeE = $_POST["liste"];
+    $couleurE = $_POST["couleur"];
 
     $updateListe = [
         "liste" => $listeE, 
+        "couleur" => $couleurE
     ];
  
    $modifTable = "liste/".$id;
@@ -173,4 +206,9 @@ else
 {
    
 }
+
+
+
+
+
 ?>

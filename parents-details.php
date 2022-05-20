@@ -33,6 +33,7 @@ session_start();
     <link rel="stylesheet" href="css/animate.min.css">
     <!-- Custom CSS -->
     <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="logo.css">
     <!-- Modernize js -->
     <script src="js/modernizr-3.6.0.min.js"></script>
 </head>
@@ -47,7 +48,7 @@ session_start();
             <div class="nav-bar-header-one">
                 <div class="header-logo">
                     <a href="index.html">
-                        LOGO
+                    <img class="logo" src="img/logo.png" alt="logo">
                     </a>
                 </div>
                   <div class="toggle-button sidebar-toggle">
@@ -119,7 +120,7 @@ session_start();
                                 class="flaticon-multiple-users-silhouette"></i><span>Utilisateurs</span></a>
                         <ul class="nav sub-group-menu">
                             <li class="nav-item">
-                                <a href="all-teacher.php" class="nav-link"><i class="fas fa-angle-right"></i>Liste des utilsateurs
+                                <a href="index2.php" class="nav-link"><i class="fas fa-angle-right"></i>Liste des utilsateurs
                                     </a>
                             </li>
                            
