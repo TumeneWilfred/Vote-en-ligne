@@ -157,10 +157,22 @@ session_start();
                         </ul>
                     </li>
                     <li class="nav-item sidebar-nav-item">
+                        <a href="#" class="nav-link"><i class="flaticon-couple"></i><span>Poste</span></a>
+                        <ul class="nav sub-group-menu">
+                            <li class="nav-item">
+                                <a href="poste.php" class="nav-link"><i class="fas fa-angle-right"></i>Poste
+                                    </a>
+                                    <a href="listePoste.php" class="nav-link"><i class="fas fa-angle-right"></i>liste des postes
+                                    </a> 
+                            </li>
+                            
+                        </ul>
+                    </li>
+                    <li class="nav-item sidebar-nav-item">
                         <a href="#" class="nav-link"><i class="flaticon-books"></i><span>Resultat</span></a>
                         <ul class="nav sub-group-menu">
                             <li class="nav-item">
-                                <a href="all-book.html" class="nav-link"><i class="fas fa-angle-right"></i>Resultat
+                                <a href="resultat.php" class="nav-link"><i class="fas fa-angle-right"></i>Resultat
                                     </a>
                             </li>
                            
@@ -958,12 +970,18 @@ session_start();
                                     <label> Choix de la couleur de la liste</label>
                                     <select class="select2" name="couleur">
                                  
-                                        <option value="rouge">Rouge</option>
-                                        <option value="Bleu">Bleu</option>
-                                        <option value="Noir">Noir</option>
-                                        <option value="Blanc">Blanc</option> 
-                                        <option value="Verte">verte</option>
-                                        <option value="Jaune">jaune</option>
+                                    <option value="red">Rouge</option>
+                                        <option value="blue">Bleu</option>
+                                        <option value="black">Noir</option>
+                                        <option value="white">Blanc</option> 
+                                        <option value="green">verte</option>
+                                        <option value="yellow">jaune</option>
+                                        <option value="orange">orange</option>
+                                      
+                                        <option value="purple">violet</option>
+                                        <option value="pink">Rose</option>
+                                        <option value="maroon">Marron</option>
+                                        <option value="gray">Gris</option>
                                         
                                     </select>
                                 </div>

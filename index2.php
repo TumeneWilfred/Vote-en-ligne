@@ -3,7 +3,6 @@ session_start();
     if (@$_SESSION["status"] != "login Reuissi") 
     {
         header("location: index.php"); 
-        exit(); 
         
     }
    
@@ -152,10 +151,22 @@ session_start();
                         </ul>
                     </li>
                     <li class="nav-item sidebar-nav-item">
+                        <a href="#" class="nav-link"><i class="flaticon-couple"></i><span>Poste</span></a>
+                        <ul class="nav sub-group-menu">
+                            <li class="nav-item">
+                                <a href="poste.php" class="nav-link"><i class="fas fa-angle-right"></i>Creation d'un Poste
+                                    </a>
+                                    <a href="listePoste.php" class="nav-link"><i class="fas fa-angle-right"></i>liste des postes
+                                    </a>    
+                            </li>
+                            
+                        </ul>
+                    </li>
+                    <li class="nav-item sidebar-nav-item">
                         <a href="#" class="nav-link"><i class="flaticon-books"></i><span>Resultat</span></a>
                         <ul class="nav sub-group-menu">
                             <li class="nav-item">
-                                <a href="all-book.html" class="nav-link"><i class="fas fa-angle-right"></i>Resultat
+                                <a href="resultat.php" class="nav-link"><i class="fas fa-angle-right"></i>Resultat
                                     </a>
                             </li>
                            
@@ -921,15 +932,17 @@ session_start();
                 <div class="card height-auto">
               
                     <div class="card-body">
-                 <a href="index.php">   <button class="btn btn-primary btn-lg">DECONNEXION</button></a>
+                 <a href="logout.php">   <button class="btn btn-primary btn-lg">DECONNEXION</button></a>
                         <div class="heading-layout1">
                             <div class="item-title">
                                 
-                                <h3>Listes des Utilisateurs    </h3>
+                                <h3>Listes des électeurs/candidats</h3>
                                 
                             </div>
                          
-                            <a href="add-teacher.php" class="btn btn-primary" style = "height: 50px; width:50px;" ><img  src="plus.png" alt=""></a>
+                            
+                          <a href="add-teacher.php" class="btn btn-primary" style = "height: 50px; width:50px;" ><img  src="plus.png" alt=""></a>
+                          
                         </div>
                         
                         <div class="table-responsive">

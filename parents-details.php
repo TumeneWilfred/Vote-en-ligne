@@ -149,8 +149,20 @@ session_start();
                         <a href="#" class="nav-link"><i class="flaticon-couple"></i><span>Configuration de l'élection</span></a>
                         <ul class="nav sub-group-menu">
                             <li class="nav-item">
-                                <a href="all-parents.html" class="nav-link"><i class="fas fa-angle-right"></i>Configuration
+                                <a href="configurationElection.php" class="nav-link"><i class="fas fa-angle-right"></i>Configuration
                                     </a>
+                            </li>
+                            
+                        </ul>
+                    </li>
+                    <li class="nav-item sidebar-nav-item">
+                        <a href="#" class="nav-link"><i class="flaticon-couple"></i><span>Poste</span></a>
+                        <ul class="nav sub-group-menu">
+                            <li class="nav-item">
+                                <a href="poste.php" class="nav-link"><i class="fas fa-angle-right"></i>Creation d'un Poste
+                                    </a>
+                                    <a href="listePoste.php" class="nav-link"><i class="fas fa-angle-right"></i>liste des postes
+                                    </a>    
                             </li>
                             
                         </ul>
@@ -159,7 +171,7 @@ session_start();
                         <a href="#" class="nav-link"><i class="flaticon-books"></i><span>Resultat</span></a>
                         <ul class="nav sub-group-menu">
                             <li class="nav-item">
-                                <a href="all-book.html" class="nav-link"><i class="fas fa-angle-right"></i>Resultat
+                                <a href="resultat.php" class="nav-link"><i class="fas fa-angle-right"></i>Resultat
                                     </a>
                             </li>
                            

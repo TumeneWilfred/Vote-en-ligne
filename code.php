@@ -62,8 +62,9 @@ else {
 
 }
 
-if(isset($_POST["enregistrer"]))
+if(isset($_POST["enregistrerCandidat"]))
 {
+
 
 $taille  = 10;
 $pass = array();
@@ -84,9 +85,14 @@ for($i = 0 ; $i < $taille; $i++)
     $prenom = $_POST["prenom"];
     $email = $_POST["email"]; 
     $matricule = $_POST["matricule"];
-    $role = $_POST["role"];
-    
+    $role = "candidat"; 
+    $liste = $_POST["liste"];
+    $poste = $_POST["poste"];
+
+   
     $postData = [
+     "idListe" => $liste,   
+     "idposte" => $poste, 
      "nom" => $nom, 
      "prenom" => $prenom,
      "email" => $email, 
@@ -94,22 +100,25 @@ for($i = 0 ; $i < $taille; $i++)
      "role" => $role,
      "password" => sha1($password)
  ];
+
  $refTable = "utilisateurs"; 
  $postRef = $database->getReference($refTable)->push($postData);
 
  if($postRef)
  {
      $_SESSION["status"] = "votre enregistrement a été un succes!!!";
-     header("location: add-teacher.php"); 
+     header("location: add-teacher.php");
+     $_SESSION["status"] = "login Reuissi";
+     
 
 $header = "MINE-version: 1.0\r\n"; 
-$header .= "From: 'alcantadard.com' <supportAlcantadard.com>"."\n";  
+$header .= "From: 'Vote en ligne' <Vote.com>"."\n";  
 $header .= "Content-Type:text/html; charset = 'utf-8'"."\n"; 
 $header .= "Content-Transfer-Encoding: 8bit";
 
-$message = "<p>Bienvenue au election de l'AE Mme/Mr $nom </p>
-            <p>Matricule: $matricule</p>
-            <p>Password: $password.</p>
+$message = "<p>Bienvenue au election de l'AE Mme/Mr <b> $nom  </b></p>
+            <p>Matricule: <b>$matricule </b></p>
+            <p>Password: <b> $password </b></p>
            
 
 "
@@ -131,6 +140,90 @@ if($deleteData)
 {
     $_SESSION["status"] = "Suppression reussi!!!";
     header("Location: voirListes.php"); 
+    $_SESSION["status"] = "login Reuissi";
+}
+
+else 
+{
+
+}
+if(isset($_POST["enregistrerElecteur"]))
+{
+
+
+$taille  = 10;
+$pass = array();
+$id = 0;  
+for($i=48; $i<58; $i++ ) $pass[$id++] = chr($i); 
+for($i=65; $i<91; $i++ ) $pass[$id++] = chr($i); 
+for($i=97; $i<123; $i++ ) $pass[$id++] = chr($i); 
+$password = "";
+
+for($i = 0 ; $i < $taille; $i++) 
+{
+    $password .= $pass[rand(0, $id - 1)];
+}
+
+
+    
+    $nom = $_POST["nom"];
+    $prenom = $_POST["prenom"];
+    $email = $_POST["email"]; 
+    $matricule = $_POST["matricule"];
+    $role = "electeur"; 
+    $liste = $_POST["liste"];
+    $poste = $_POST["poste"];
+
+   
+    $postData = [
+     "nom" => $nom, 
+     "prenom" => $prenom,
+     "email" => $email, 
+     "matricule" => $matricule,
+     "role" => $role,
+     "password" => sha1($password)
+ ];
+
+ $refTable = "utilisateurs"; 
+ $postRef = $database->getReference($refTable)->push($postData);
+
+ if($postRef)
+ {
+     $_SESSION["status"] = "votre enregistrement a été un succes!!!";
+     header("location: add-teacher.php");
+     $_SESSION["status"] = "login Reuissi";
+     
+
+$header = "MINE-version: 1.0\r\n"; 
+$header .= "From: 'Vote en ligne' <Vote.com>"."\n";  
+$header .= "Content-Type:text/html; charset = 'utf-8'"."\n"; 
+$header .= "Content-Transfer-Encoding: 8bit";
+
+$message = "<p>Bienvenue au election de l'AE Mme/Mr <b> $nom  </b></p>
+            <p>Matricule: <b>$matricule </b></p>
+            <p>Password: <b> $password </b></p>
+           
+
+"
+;
+
+mail($email, "Objet", $message, $header); 
+
+ }
+
+}
+
+if(isset($_POST["delete"]))
+{
+    $id = $_POST["id_key"];
+    $refTable = "utilisateurs/".$id;
+    $deleteData = $database->getReference($refTable)->remove();
+}
+if($deleteData)
+{
+    $_SESSION["status"] = "Suppression reussi!!!";
+    header("Location: index2.php"); 
+    $_SESSION["status"] = "login Reuissi";
 }
 
 else 
@@ -147,28 +240,33 @@ if($deleteListe)
 {
 
     header("Location: voirListes.php"); 
+    $_SESSION["status"] = "login Reuissi";
 }
 
 else 
 {
-
+    
 }
 
-if(isset($_POST["modifier"]))
+if(isset($_POST["modifierCandidat"]))
 {
     $id = $_POST["id"];
-    $nomE = $_POST["nom"];
-    $prenomE = $_POST["prenom"];
-    $matriculeE = $_POST["matricule"];
-    $mailE = $_POST["email"];
-    $roleE = $_POST["role"];
+    $nom = $_POST["nom"];
+    $prenom = $_POST["prenom"];
+    $email = $_POST["email"]; 
+    $matricule = $_POST["matricule"];
+    $role = "candidat"; 
+    $liste = $_POST["liste"];
+    $poste = $_POST["poste"];
 
     $updateData = [
-        "nom" => $nomE, 
-        "prenom" => $prenomE, 
-        "matricule" => $matriculeE, 
-        "email" => $mailE,
-        "role" => $roleE, 
+        "idListe" => $liste,   
+        "idposte" => $poste, 
+        "nom" => $nom, 
+        "prenom" => $prenom,
+        "email" => $email, 
+        "matricule" => $matricule,
+        "role" => $role,
     ];
  
    $modifTable = "utilisateurs/".$id;
@@ -177,7 +275,40 @@ if(isset($_POST["modifier"]))
 
 if($updateQuery)
 {
-    header("location: all-teacher.php"); 
+    header("location: index2.php"); 
+    $_SESSION["status"] = "login Reuissi";
+}
+else 
+{
+    
+}
+if(isset($_POST["modifierElecteur"]))
+{
+    $id = $_POST["id"];
+    $nom = $_POST["nom"];
+    $prenom = $_POST["prenom"];
+    $email = $_POST["email"]; 
+    $matricule = $_POST["matricule"];
+    $role = "electeur"; 
+    $liste = $_POST["liste"];
+    $poste = $_POST["poste"];
+
+    $updateData = [
+     "nom" => $nom, 
+     "prenom" => $prenom,
+     "email" => $email, 
+     "matricule" => $matricule,
+     "role" => $role,
+    ];
+ 
+   $modifTable = "utilisateurs/".$id;
+   $updateQuery =  $database->getReference($modifTable)->update($updateData);
+}
+
+if($updateQuery)
+{
+    header("location: index2.php"); 
+    $_SESSION["status"] = "login Reuissi";
 }
 else 
 {
@@ -201,14 +332,12 @@ if(isset($_POST["modifListe"]))
 if($updateList)
 {
     header("location: voirListes.php"); 
+    $_SESSION["status"] = "login Reuissi";
 }
 else 
 {
    
 }
-
-
-
 
 
 ?>

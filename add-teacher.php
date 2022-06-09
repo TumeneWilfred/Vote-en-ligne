@@ -156,10 +156,22 @@ session_start();
                         </ul>
                     </li>
                     <li class="nav-item sidebar-nav-item">
+                        <a href="#" class="nav-link"><i class="flaticon-couple"></i><span>Poste</span></a>
+                        <ul class="nav sub-group-menu">
+                            <li class="nav-item">
+                                <a href="poste.php" class="nav-link"><i class="fas fa-angle-right"></i>Poste
+                                    </a>
+                                    <a href="listePoste.php" class="nav-link"><i class="fas fa-angle-right"></i>liste des postes
+                                    </a> 
+                            </li>
+                            
+                        </ul>
+                    </li>
+                    <li class="nav-item sidebar-nav-item">
                         <a href="#" class="nav-link"><i class="flaticon-books"></i><span>Resultat</span></a>
                         <ul class="nav sub-group-menu">
                             <li class="nav-item">
-                                <a href="all-book.html" class="nav-link"><i class="fas fa-angle-right"></i>Resultat
+                                <a href="resultat.php" class="nav-link"><i class="fas fa-angle-right"></i>Resultat
                                     </a>
                             </li>
                            
@@ -932,9 +944,16 @@ session_start();
                 <div class="card height-auto">
                     <div class="card-body">
                         <div class="heading-layout1">
+
+                        <?php
+                            include("DbConnection.php"); 
+                            $fetchListe = $database->getReference("liste")->getValue();
+                            $fetchposte = $database->getReference("poste")->getValue();
+
+                            ?>
                         
                             <div class="item-title">
-                                <h3>Ajouter un utilisateurs</h3>
+                                <h3>Ajouter un electeur/candidat</h3>
                             </div>
                             <div class="dropdown">
                             <a href="index.php">   <button class="btn btn-primary btn-lg">DECONNEXION</button></a>
@@ -968,19 +987,48 @@ session_start();
                                     <label>Email</label>
                                     <input type="email" placeholder="email" name="email" class="form-control">
                                 </div>
+                                
                                 <div class="col-xl-3 col-lg-6 col-12 form-group">
-                                    <label>Role *</label>
-                                    <select class="select2" name="role">
-                                 
-                                        <option value="candidat">Candidat</option>
-                                        <option value="electeurs">Electeurs</option>
-                                        
-                                    </select>
+                                    <label>Liste</label>
+                                    <select class="select2" name="liste">
+                                        <?php
+                                            if($fetchListe>0)
+                                            {
+                                                foreach($fetchListe as $key => $row)
+                                                {
+
+                                        ?>
+                                         <option value=<?= $key; ?>><?= $row["liste"]  ?></option>
+                                         <?php
+                                                 }
+                                                }
+                                      ?>
+                                      </select>
+                                      
+                                </div>
+                                <div class="col-xl-3 col-lg-6 col-12 form-group">
+                                    <label>Poste</label>
+                                    <select class="select2" name="poste">
+                                        <?php
+                                            if($fetchposte>0)
+                                            {
+                                                foreach($fetchposte as $key2 => $row)
+                                                {
+
+                                        ?>
+                                         <option value=<?= $key2; ?>><?= $row["nomPoste"]  ?></option>
+                                         <?php
+                                                 }
+                                                }
+                                      ?>
+                                      </select>
+                                      
                                 </div>
 
                             </div>
                             <br>
-                            <button class="btn btn-primary btn-lg" name="enregistrer">Enregistrer</button>
+                            <button class="btn btn-primary btn-lg" name="enregistrerCandidat">Enregistrer comme candidat</button>
+                            <button class="btn btn-primary btn-lg" name="enregistrerElecteur">Enregistrer comme electeur</button>
 
                         </form>
                     </div>

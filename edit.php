@@ -147,10 +147,22 @@
                         </ul>
                     </li>
                     <li class="nav-item sidebar-nav-item">
+                        <a href="#" class="nav-link"><i class="flaticon-couple"></i><span>Poste</span></a>
+                        <ul class="nav sub-group-menu">
+                            <li class="nav-item">
+                                <a href="poste.php" class="nav-link"><i class="fas fa-angle-right"></i>Creation d'un Poste
+                                    </a>
+                                    <a href="listePoste.php" class="nav-link"><i class="fas fa-angle-right"></i>liste des postes
+                                    </a>    
+                            </li>
+                            
+                        </ul>
+                    </li>
+                    <li class="nav-item sidebar-nav-item">
                         <a href="#" class="nav-link"><i class="flaticon-books"></i><span>Resultat</span></a>
                         <ul class="nav sub-group-menu">
                             <li class="nav-item">
-                                <a href="all-book.html" class="nav-link"><i class="fas fa-angle-right"></i>Resultat
+                                <a href="resultat.php" class="nav-link"><i class="fas fa-angle-right"></i>Resultat
                                     </a>
                             </li>
                            
@@ -943,6 +955,10 @@
                              $ReferenceTable = "utilisateurs";
                              $id = $_GET['id'];
                              $modifData = $database->getReference($ReferenceTable)->getChild($id)->getValue();
+                             $fetchListe = $database->getReference("liste")->getValue();
+                             $fetchposte = $database->getReference("poste")->getValue();
+ 
+                            
                              ?> 
                         <form class="new-added-form" action="code.php" method="POST">
                         <input type="hidden" name="id" value="<?= $id; ?>">
@@ -967,18 +983,47 @@
                                     <input type="email"  name="email" class="form-control" value="<?=$modifData["email"];?>">
                                 </div>
                                 <div class="col-xl-3 col-lg-6 col-12 form-group">
-                                    <label>Role *</label>
-                                    <select class="select2" name="role" value="<?=$modifData["role"];?>">
-                                 
-                                        <option value="candidat">Candidat</option>
-                                        <option value="electeurs">Electeurs</option>
-                                        
-                                    </select>
+                                    <label>Liste</label>
+                                    <select class="select2" name="liste">
+                                        <?php
+                                            if($fetchListe>0)
+                                            {
+                                                foreach($fetchListe as $key => $row)
+                                                {
+
+                                        ?>
+                                         <option value=<?= $key; ?>><?= $row["liste"]  ?></option>
+                                         <?php
+                                                 }
+                                                }
+                                      ?>
+                                      </select>
+                                      
                                 </div>
+                                <div class="col-xl-3 col-lg-6 col-12 form-group">
+                                    <label>Poste</label>
+                                    <select class="select2" name="poste">
+                                        <?php
+                                            if($fetchposte>0)
+                                            {
+                                                foreach($fetchposte as $key2 => $row)
+                                                {
+
+                                        ?>
+                                         <option value=<?= $key2; ?>><?= $row["nomPoste"]  ?></option>
+                                         <?php
+                                                 }
+                                                }
+                                      ?>
+                                      </select>
+                                      
+                                </div>
+                              
 
                             </div>
                             <br>
-                            <button class="btn btn-primary btn-lg" name="modifier">MODIFIER</button>
+                            <button class="btn btn-primary btn-lg" name="modifierCandidat">Modifier comme candidat</button>
+                            <button class="btn btn-primary btn-lg" name="modifierElecteur">Modifier comme electeur</button>
 
                         </form>
                     </div>

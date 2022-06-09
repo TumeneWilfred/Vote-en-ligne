@@ -9,8 +9,6 @@ if(!empty($email) AND !empty($password))
 if(isset($_POST["login"])); 
 {
   
-  
-
     try {
         $user = $auth->getUserByEmail("$email"); 
         $signInResult = $auth->signInWithEmailAndPassword($email, $password);
@@ -24,10 +22,11 @@ if(isset($_POST["login"]));
             $_SESSION["idTokenString"] = $idTokenString;
             $_SESSION["status"] = "login Reuissi";
             header("Location: index2.php"); 
-            exit();
+           
         } catch(InvalideToken $e)
         {
             echo " the token is invalid".$e->getMessage();
+            header("Location: logout.php"); 
         }
         catch (\InvalidArgumentException $e){
             echo "the token could not be parsed".$e->getMessage;
